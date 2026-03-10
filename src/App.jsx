@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./ui/Home";
-import Menu from "./features/menu/Menu";
+import Menu, { loader as menuLoader } from "./features/menu/Menu";
 import AppLayout from "./ui/AppLayout";
 
 const router = createBrowserRouter([
@@ -8,7 +8,7 @@ const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/menu", element: <Menu /> },
+      { path: "/menu", element: <Menu />, loader: menuLoader },
     ],
   },
 ]);
