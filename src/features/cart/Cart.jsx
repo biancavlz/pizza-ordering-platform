@@ -2,33 +2,10 @@ import { useSelector } from 'react-redux';
 import Button from '../../ui/Button';
 import LinkButton from '../../ui/LinkButton';
 import CartItem from './CartItem';
-
-const fakeCart = [
-  {
-    key: 12,
-    name: 'Mediterranean',
-    quantity: 2,
-    unitPrice: 16,
-    totalPrice: 32,
-  },
-  {
-    key: 6,
-    name: 'Vegetale',
-    quantity: 1,
-    unitPrice: 13,
-    totalPrice: 13,
-  },
-  {
-    key: 11,
-    name: 'Spinach and Mushroom',
-    quantity: 1,
-    unitPrice: 15,
-    totalPrice: 15,
-  },
-];
+import { getCart } from './cartSlice';
 
 function Cart() {
-  const cart = fakeCart;
+  const cart = useSelector(getCart);
   const username = useSelector((state) => state.user.username);
 
   return (
